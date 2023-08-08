@@ -1,0 +1,2 @@
+class UserDetailForm < ApplicationRecord
+end

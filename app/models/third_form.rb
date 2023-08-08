@@ -1,0 +1,2 @@
+class ThirdForm < ApplicationRecord
+end

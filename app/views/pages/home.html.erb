@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container custom-container mt-5" style="max-width: 600px;">
+
+  <div class="border rounded p-4 shadow-lg bg-light">
+
+    <h1 class="welcome-text text-center">Welcome to My App!</h1>
+    <p class="welcome-text text-center">Sign in or sign up to get started:</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary mb-2 btn-block" %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success mb-2 btn-block" %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= link_to "Signout", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-block" %>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <%= link_to user_detail_path, class: "btn btn-info btn-block" do %>
+              Add Form
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+
